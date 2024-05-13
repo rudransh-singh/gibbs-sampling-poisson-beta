@@ -14,6 +14,7 @@ def poisson_beta_size_factor(read_count):
     normalized_read_count = normalized_read_count / row_gmean_reshaped
     print(normalized_read_count)
     size_factor = np.zeros(read_count.shape[1])
+    print("size factor", size_factor.shape)
     for j in range(read_count.shape[1]):
         size_factor[j] = np.median(normalized_read_count[normalized_read_count[:, j] != 0, j])
     print(size_factor)
